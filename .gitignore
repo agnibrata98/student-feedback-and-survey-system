@@ -1,0 +1,35 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+log.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Uploaded files (e.g. from multer)
+uploads/
+
+# Build artifacts
+build/
+coverage/
+
+# Optional: ignore local database or runtime files
+*.sqlite
+*.pid
+
+# Git itself
+.git/
