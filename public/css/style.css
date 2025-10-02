@@ -1,0 +1,118 @@
+/* font lin k */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* common class
+ */
+ul {
+  list-style-type: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: #fff7ef;
+  --secondary-color: #5e5c5c;
+  --tertiary-color: #e0422d;
+}
+
+h1,
+.title-1,
+h2,
+.title-2,
+h3,
+.title-3,
+h4,
+.title-4,
+h5,
+.title-5,
+h6,
+.title-6 {
+  font-family: "Poppins", sans-serif !important;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: "Poppins", sans-serif !important;
+}
+
+ul,
+li,
+a {
+  font-size: 16px !important;
+}
+
+.btn .bi-person-circle {
+  color: black !important;
+}
+
+/* Sidebar */
+
+#sidebarMenu {
+  background-color: #f7e6d6;
+}
+
+/* nav link */
+
+.nav-link {
+  color: var(--secondary-color) !important;
+}
+
+.active {
+  color: var(--tertiary-color) !important;
+}
+
+.title-1 {
+  font-size: 36px !important;
+}
+
+/* creat survey button */
+
+.btn-danger {
+  background-color: var(--tertiary-color) !important;
+}
+
+.lead-img,
+.big-ellipse,
+.small-ellipse {
+  margin-right: 20px;
+}
+
+.card {
+  border-color: var(--tertiary-color) !important;
+}
+
+/* Large screen e offcanvas ke sidebar moto show korbo */
+@media (min-width: 992px) {
+  .offcanvas-start {
+    position: static;
+    transform: none;
+    visibility: visible !important;
+    border-right: 1px solid #dee2e6;
+  }
+  .offcanvas-backdrop {
+    display: none !important;
+  }
+}
+
+/* Small screen fix for Create Survey button */
+@media (max-width: 576px) {
+  .btn-danger.create-survey {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .lead-img,
+  .big-ellipse,
+  .small-ellipse {
+    margin-right: 0px;
+  }
+}

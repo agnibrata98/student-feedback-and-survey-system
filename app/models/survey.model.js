@@ -20,6 +20,14 @@ const surveySchema = new mongoose.Schema (
       ref: 'class',
       required: true,
     },
+    is_completed: {
+      type: Boolean,
+      default: false,
+    },
+    is_active: {
+      type: Boolean,
+      default: true,
+    },
   },
   {timestamps: true}
 );

@@ -6,12 +6,16 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser')
 const flash = require('connect-flash');
 const cors = require ('cors');
-const apiRoutes = require ('./app/routers/api/api.routes');
-const ejsRoutes = require('./app/routers/ejs/admin.routes');
+const authApiRoutes = require ('./app/routers/api/auth.routes');
+const StudentApiRoutes = require ('./app/routers/api/student.routes');
+const ejsAdminRoutes = require('./app/routers/ejs/admin.routes');
 const path = require ('path');
 
 // middleware setup
-app.use (cors());   // to allow cross-origin requests
+app.use(cors({
+  origin: "http://localhost:5173", // your Next.js origins
+  credentials: true,  // allow cookies
+}));  // to allow cross-origin requests
 app.use (express.urlencoded ({extended: true}));    // to parse URL-encoded bodies
 app.use (express.json ());  // to parse JSON bodies
 
@@ -42,10 +46,14 @@ app.use (express.static (__dirname + '/public'));
 app.use ('/uploads', express.static (path.join (__dirname, 'uploads')));
 
 // EJS admin dashboard routes
-app.use (ejsRoutes);
+app.use ("/", ejsAdminRoutes);
 
-// API routes
-app.use ('/api', apiRoutes);
+// API routes for authentication
+app.use ('/api/auth', authApiRoutes);
+
+// API routes for student operations
+app.use ('/api/students', StudentApiRoutes);
+
 
 // 404 handler
 // app.use ((req, res) => {
